@@ -2,18 +2,23 @@
 
 <template>
   <div>
-    <h1>{{title}}</h1>
+    <app-header></app-header>
     <characters></characters>
+    <app-footer></app-footer>
   </div>
 </template>
 
 <script>
-import Characters from './Characters.vue'
+import Header from './components/Header.vue';
+import Characters from './components/Characters.vue';
+import Footer from './components/Footer.vue';
 
 export default {
   //Local components
   components: {
-    'characters': Characters
+    'app-header': Header,
+    'characters': Characters,
+    'app-footer': Footer
   },
   data () {
     return {
@@ -26,6 +31,8 @@ export default {
 }
 </script>
 
-<style lang="scss">
-
+<style scoped lang="scss">
+  h1 {
+    color: purple;
+  }
 </style>
