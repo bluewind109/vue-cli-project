@@ -2,7 +2,7 @@
 
 <template>
   <div>
-    <app-header :title="title"></app-header>
+    <app-header :title="title" @changeTitle="updateTitle($event)"></app-header>
     <app-characters :characters="characters"></app-characters>
     <app-footer :title="title"></app-footer>
   </div>
@@ -34,7 +34,9 @@ export default {
     }
   },
   methods: {
-
+    updateTitle: function(updatedTitle) {
+      this.title = updatedTitle;
+    }
   }
 }
 </script>

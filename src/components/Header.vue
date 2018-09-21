@@ -1,24 +1,30 @@
 <template>
-  <header>
-    <h1 @click="changeTitle">{{title}}</h1>
-  </header>
+<header>
+  <h1 @click="changeTitle">{{title}}</h1>
+</header>
 </template>
 
 <script>
+import {
+  bus
+} from '../main';
+
 export default {
   props: {
     title: {
       type: String
     }
   },
-  data () {
+  data() {
     return {
       title: 'Characters'
     }
   },
   methods: {
     changeTitle: function() {
-      this.title = 'Vue Wizards'
+      // this.$emit('changeTitle', 'Vue Wizards');
+      this.title = 'Vue Wizards';
+      bus.$emit('titleChanged', 'Vue Wizards');
     }
   }
 }
@@ -26,12 +32,12 @@ export default {
 
 <style scoped lang="scss">
 header {
-  background: lightblue;
-  padding: 10px;
+    background: lightblue;
+    padding: 10px;
 }
 
 h1 {
-  color: #222;
-  text-align: center;
+    color: #222;
+    text-align: center;
 }
 </style>

@@ -1,14 +1,14 @@
 <template>
-  <div id="characters">
-    <h1>List of characters</h1>
-    <ul>
-      <li v-for="character in characters" @click="character.show = !character.show">
-        <h2>{{character.name}}</h2>
-        <h3 v-show="character.show">{{character.speciality}}</h3>
-      </li>
-    </ul>
-    <button type="button" name="button" @click="deleteCharacter">Delete character</button>
-  </div>
+<div id="characters">
+  <h1>List of characters</h1>
+  <ul>
+    <li v-for="character in characters" @click="character.show = !character.show">
+      <h2>{{character.name}}</h2>
+      <h3 v-show="character.show">{{character.speciality}}</h3>
+    </li>
+  </ul>
+  <button type="button" name="button" @click="deleteCharacter">Delete character</button>
+</div>
 </template>
 
 <script>
@@ -19,7 +19,7 @@ export default {
       required: true
     }
   },
-  data () {
+  data() {
     return {
 
     }
@@ -33,20 +33,20 @@ export default {
 </script>
 
 <style scoped lang="scss">
-#characters{
+#characters {
     width: 100%;
     max-width: 1200px;
     margin: 40px auto;
     padding: 0 20px;
     box-sizing: border-box;
 }
-ul{
+ul {
     display: flex;
     flex-wrap: wrap;
     list-style-type: none;
     padding: 0;
 }
-li{
+li {
     flex-grow: 1;
     flex-basis: 300px;
     text-align: center;
