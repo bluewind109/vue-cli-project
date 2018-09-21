@@ -1,14 +1,19 @@
 <template>
   <footer>
-    <p>{{copyrights}}</p>
+    <p>{{copyrights}} {{title}}</p>
   </footer>
 </template>
 
 <script>
 export default {
+  props: {
+    title: {
+      type: String
+    }
+  },
   data () {
     return {
-      copyrights: 'Copyright 2018 FlyK'
+      copyrights: 'Copyright 2018'
     }
   },
   methods: {

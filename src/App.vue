@@ -2,9 +2,9 @@
 
 <template>
   <div>
-    <app-header></app-header>
+    <app-header :title="title"></app-header>
     <app-characters :characters="characters"></app-characters>
-    <app-footer></app-footer>
+    <app-footer :title="title"></app-footer>
   </div>
 </template>
 
@@ -29,7 +29,8 @@ export default {
         {name: 'Tango', speciality: 'Conditionals', show: false},
         {name: 'Kami', speciality: 'Webpack', show: false},
         {name: 'Yoshi', speciality: 'Data Diggin', show: false}
-      ]
+      ],
+      title: 'Vue Characters'
     }
   },
   methods: {

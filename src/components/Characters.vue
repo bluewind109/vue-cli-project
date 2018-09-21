@@ -7,6 +7,7 @@
         <h3 v-show="character.show">{{character.speciality}}</h3>
       </li>
     </ul>
+    <button type="button" name="button" @click="deleteCharacter">Delete character</button>
   </div>
 </template>
 
@@ -24,7 +25,9 @@ export default {
     }
   },
   methods: {
-
+    deleteCharacter: function() {
+      this.characters.pop();
+    }
   }
 }
 </script>
