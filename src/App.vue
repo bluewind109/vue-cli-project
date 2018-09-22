@@ -1,48 +1,42 @@
 <!-- ROOT component -->
 
 <template>
-  <div>
-    <app-header :title="title" @changeTitle="updateTitle($event)"></app-header>
-    <app-characters :characters="characters"></app-characters>
-    <app-footer :title="title"></app-footer>
-  </div>
+<div>
+  <form-helper>
+    <div slot="form-header">
+      <h3>Form Title</h3>
+      <p>Form infomation</p>
+    </div>
+    <div slot="form-fields">
+      <input type="text" placeholder="name" required>
+      <input type="password" placeholder="password" required>
+    </div>
+      <div slot="form-controls">
+        <button type="button" @click="handleSubmit">Submit</button>
+      </div>
+  </form-helper>
+</div>
 </template>
 
 <script>
-import Header from './components/Header.vue';
-import Characters from './components/Characters.vue';
-import Footer from './components/Footer.vue';
+import formHelper from './components/formHelper.vue';
 
 export default {
   //Local components
   components: {
-    'app-header': Header,
-    'app-characters': Characters,
-    'app-footer': Footer
+    'form-helper': formHelper
   },
-  data () {
+  data() {
     return {
-      characters: [
-        {name: 'Ryu', speciality: 'Vue Components', show: false},
-        {name: 'Crystal', speciality: 'HTML Wizardry', show: false},
-        {name: 'Hitoshi', speciality: 'Click Events', show: false},
-        {name: 'Tango', speciality: 'Conditionals', show: false},
-        {name: 'Kami', speciality: 'Webpack', show: false},
-        {name: 'Yoshi', speciality: 'Data Diggin', show: false}
-      ],
-      title: 'Vue Characters'
+      title: 'I am the slot title'
     }
   },
   methods: {
-    updateTitle: function(updatedTitle) {
-      this.title = updatedTitle;
-    }
+
   }
 }
 </script>
 
 <style scoped lang="scss">
-  h1 {
-    color: purple;
-  }
+
 </style>
