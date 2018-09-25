@@ -39,8 +39,6 @@
 
 <script>
 export default {
-  //Local components
-  components: {},
   data() {
     return {
       blog: {
